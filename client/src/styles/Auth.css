@@ -1,0 +1,69 @@
+.auth-page {
+    background: url('../images/ice_cream.jpg');
+    background-position:center;
+    background-size: cover;
+    height: 89vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+.auth-form {
+    background-color: var(--background-color);
+    width:36rem;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.auth-form h2{
+    margin-bottom: 2rem;
+}
+.auth-form input {
+    width: 100%;
+    height: 2.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+    border: 0;
+    font-size: x-large;
+    outline: none;
+    border-bottom: 2px solid var(--button-color);
+    background-color: var(--bg-color);
+}
+.auth-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--button-color);
+    border: 4px solid var(--button-color);
+    align-self: center;
+    border-radius:10px;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bolder;
+    margin: 2rem 0;
+}
+.auth-form button:hover {
+    background-color: transparent;
+    color: var(--text-color);
+}
+.auth-form a{
+    color: var(--button-color);
+}
+.auth-form a:hover{
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
+@media(max-width: 1400px){
+    .auth-page img{
+        display: none;
+    }
+}

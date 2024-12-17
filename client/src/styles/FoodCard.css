@@ -1,0 +1,101 @@
+
+.food-card{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    position: relative;
+}
+.food-card:hover{
+    transform: scale(1.05);
+}
+.hover-links{
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.food-card:hover .hover-links{
+    opacity: 1;
+}
+.hover-links button{
+    background-color: #F9EAE1;
+    border-radius: 5px;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    justify-content: center;
+}
+.hover-links button:hover{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+}
+.tooltip-button {
+    position: relative;
+    display: inline-block;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-size: small;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%; /* Position above the button */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip-button:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+.food-card p{
+    display: -webkit-box; 
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+.food-card img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border-bottom: 1px solid var(--secondary-color);
+
+}
+.price{
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    font-weight: bold;
+}
+.price span:first-child{
+    font-weight: bolder;
+    font-size: larger;
+}
+.price span:nth-child(2){
+    text-decoration: line-through;
+    font-size: large;
+    color: brown;
+}
+.price span:last-child{
+    font-size: large;
+    color: rgb(1, 59, 1);
+}

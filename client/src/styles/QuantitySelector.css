@@ -1,0 +1,38 @@
+.quantity-selector {
+  position: relative;
+  display: inline-block;
+  font-size: 2rem; 
+  width: 7rem; 
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-container select {
+  padding: 15px 5px 15px 25px; 
+  font-size: 1.5rem; 
+  border: 3px solid var(--button-color);
+  border-radius: 10px;
+  background: var(--background-color);
+  cursor: pointer;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none; 
+}
+
+.dropdown-container select:disabled {
+  background: #f5f5f5;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 0.75rem;
+  top: 53%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 1.25rem;
+  color: var(--button-color);
+}
+
+

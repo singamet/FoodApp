@@ -1,0 +1,132 @@
+.food-details{
+    display: flex;
+    padding: 1rem;
+    gap: 3rem;
+}
+.food-details img{
+    width: 40%;
+}
+.food-details-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 60%;
+    font-size: x-large;
+}
+.food-details-info-top{
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+}
+.food-details-info-top button{
+    border: 3px solid var(--button-color);
+    border-radius: 10px;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.food-details-info-top button:hover{
+    background-color: var(--button-color);
+    color: azure;
+}
+.food-details-info .price span:nth-child(2){
+    color: rgb(146, 146, 146);
+}
+.ingredients {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.ingredients span{
+    display: block;
+    color: rgb(71, 4, 4);
+    background-color: rgb(247, 181, 181);
+    padding: 0.15rem 0.5rem;
+    border-radius: 10px;
+    font-size: smaller;
+}
+.food-details-links{
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 3rem;
+}
+.link-button{
+    width: 40%;
+    font-size: x-large; 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    gap: 0.5rem;
+    border-radius: 10px;
+    padding: 0 0.5rem;
+    background-color: var(--button-color);
+    border: 3px solid var(--button-color);
+    font-weight: bolder;
+}
+.link-button:hover{
+    background-color: transparent;
+    color: var(--button-color);
+}
+.food-details-links .custom-button{
+    background-color: aqua;
+    height: 4.5rem;
+    width: 100%;
+    font-size: x-large;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+@media(max-width: 1330px){
+    .food-details-info{
+        gap: 1rem;
+    }
+}
+@media(max-width: 1200px){
+    .food-details-info{
+        font-size: large;
+    }
+}
+@media(max-width: 1100px){
+    .food-details{
+        gap: 1rem;
+    }
+    .food-details-info{
+        
+        width: 60%;
+    }
+    .link-button{
+        font-size: large;
+    }
+}
+@media(max-width: 1005px){
+    .food-details-links{
+        margin-top: 1rem;
+    }
+}
+@media(max-width: 920px){
+    .food-details{
+        width: 60%;
+        flex-direction: column;
+    }
+    .food-details img{
+        width: 100%;
+    }
+    .food-details-info{
+        width: 100%;
+    }
+}
+@media(max-width: 760px){
+    .food-details{
+        width: 80%;
+    }
+}
+@media(max-width: 540px){
+    .food-details{
+        width: 99%;
+    }
+}
