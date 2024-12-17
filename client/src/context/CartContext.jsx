@@ -13,12 +13,15 @@ export const CartContextProvider = ({ children }) => {
       if (user) {
         try {
           setIsLoading(true);
-          const response = await fetch("/api/user/cart", {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${user.token}`,
-            },
-          });
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/user/cart`,
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${user.token}`,
+              },
+            }
+          );
           if (response.ok) {
             const json = await response.json();
             setCart(json.cart);

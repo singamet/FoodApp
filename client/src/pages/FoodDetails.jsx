@@ -24,7 +24,9 @@ export default function FoodDetails() {
     const getFoodItem = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(`/api/food/${id}`);
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/food/${id}`
+        );
         const data = await response.json();
         if (response.ok) {
           setFood(data);

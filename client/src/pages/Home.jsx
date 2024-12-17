@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchFoodItems = async () => {
-      const response = await fetch("/api/food");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/food`);
       const json = await response.json();
       if (response.ok) {
         dispatch({ type: "SET_FOOD_ITEMS", payload: json });

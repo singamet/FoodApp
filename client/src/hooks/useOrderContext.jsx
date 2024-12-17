@@ -20,12 +20,15 @@ export const useFetchOrders = () => {
     try {
       setIsLoading(true);
       if (user) {
-        const response = await fetch("/api/user/order", {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/user/order`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         const json = await response.json();
         if (response.ok) {
           dispatch({ type: "SET_ORDERS", payload: json });
@@ -63,30 +66,36 @@ export const useAddOrder = () => {
     try {
       setIsLoading(true);
       if (user) {
-        const addResponse = await fetch("/api/user/order", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-          body: JSON.stringify({
-            email,
-            name,
-            phone,
-            status,
-            shipping_address,
-            tip_amount,
-            additional_info,
-            products,
-          }),
-        });
-        const clearCartResponse = await fetch("/api/user/cart", {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-        });
+        const addResponse = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/user/order`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${user.token}`,
+            },
+            body: JSON.stringify({
+              email,
+              name,
+              phone,
+              status,
+              shipping_address,
+              tip_amount,
+              additional_info,
+              products,
+            }),
+          }
+        );
+        const clearCartResponse = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/user/cart`,
+          {
+            method: "DELETE",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${user.token}`,
+            },
+          }
+        );
         const json = await addResponse.json();
         if (addResponse.ok && clearCartResponse.ok) {
           dispatch({ type: "ADD_ORDER", payload: json });
@@ -115,14 +124,17 @@ export const useUpdateOrder = () => {
     try {
       setIsLoading(true);
       if (user) {
-        const response = await fetch(`/api/user/order/${orderId}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${user.token}`,
-          },
-          body: JSON.stringify(orderData),
-        });
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/user/order/${orderId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${user.token}`,
+            },
+            body: JSON.stringify(orderData),
+          }
+        );
         const json = await response.json();
         if (response.ok) {
           dispatch({ type: "UPDATE_ORDER", payload: json });
@@ -151,13 +163,16 @@ export const useDeleteOrder = () => {
       try {
         setIsLoading(true);
         if (user) {
-          const response = await fetch(`/api/user/order/${orderId}`, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${user.token}`,
-            },
-          });
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/api/user/order/${orderId}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${user.token}`,
+              },
+            }
+          );
           const json = await response.json();
           if (response.ok) {
             dispatch({ type: "DELETE_ORDER", payload: orderId });

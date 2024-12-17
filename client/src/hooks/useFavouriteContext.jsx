@@ -19,13 +19,16 @@ export const useAddToFavourites = () => {
   const addToFavourites = async (foodId) => {
     setIsLoading(true);
     try {
-      const response = await fetch(`/api/user/favourites/${foodId}`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/user/favourites/${foodId}`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const json = await response.json();
       if (!response.ok) {
         setError(json.error);
@@ -50,13 +53,16 @@ export const useRemoveFromFavourites = () => {
   const removeFromFavourites = async (_id) => {
     setIsLoading(true);
     try {
-      const response = await fetch(`/api/user/favourites/${_id}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/user/favourites/${_id}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const json = await response.json();
       if (!response.ok) {
         setError(json.error);

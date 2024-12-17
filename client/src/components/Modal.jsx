@@ -19,7 +19,7 @@ const Modal = ({ isOpen, onClose, onConfirm, message }) => {
         </div>
       </div>
     </div>,
-    document.getElementById("modal-root") // Ensure this element exists in your HTML
+    document.getElementById("modal-root")
   );
 };
 

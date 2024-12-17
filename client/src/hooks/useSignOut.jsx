@@ -8,13 +8,16 @@ export const useSignOut = () => {
   const signout = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("/api/user/logout", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/user/logout`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const json = await response.json();
       if (response.ok) {
         localStorage.removeItem("user");
