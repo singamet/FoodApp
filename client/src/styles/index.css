@@ -87,12 +87,15 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 3rem 10rem;
-    gap: 1rem;
+    padding: 2rem 10rem;
+    gap: 0.5rem;
     font-size:x-large;
 }
 .about-page p{
-    margin: 2rem 0;
+    margin: 1rem 0;
+}
+.about-page a{
+    text-decoration: underline;
 }
 .contact-page{
     width: 40%;

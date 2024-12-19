@@ -37,6 +37,12 @@ export default function About() {
         ordering needs. Thank you for choosing our app, and we hope you enjoy
         using it as much as we enjoyed building it!
       </p>
+      <p>
+        <b>Acknowledgement</b>: The design of this website is inspired from
+        <a href="https://www.youtube.com/watch?v=bd5DewlahnE" target="_blank">
+          Geeks for Geeks Food App tutorial
+        </a>
+      </p>
     </div>
   );
 }
